@@ -46,25 +46,54 @@ header{
     color: rgb(57, 145, 245);
 }
 
+/* Toggle Button Animation */
+.navbuttons{
+
+    transition: 1s;
+    transform: rotate(0);
+}
+
+.navbuttons:focus{
+    box-shadow: none;
+}
+
+.changes.navbuttons{
+    transition: 1s;
+    transform: rotate(180deg);
+}
+
 .lines1, .lines2, .lines3{
     width: 23px;
     height: 3px;
     margin: 5px;
 
-    transition: all 0.4s;
+    transition: all ease-in-out 0.5s;
 }
 
 .changes .lines1{
-    transform: rotate(-45deg) translate(-5px,6px);
+    /* transform: rotate(-45deg) translate(-5px,6px); */
+                                        /* left - , top -  */
+    transition-delay: 0.2s;
+    transform: rotate(41deg) translate(10px,-3px);
+    width: 13px;
 }
 
 .changes .lines2{
-    opacity: 0;
+    /* opacity: 0; */
+    opacity: 1;
+    border-radius: 0 50% 50% 0;
+    width: 22px;
 }
 
 .changes .lines3{
-    transform: rotate(45deg) translate(-5px,-6px);
+    /* transform: rotate(45deg) translate(-5px,-6px); */
+    transition-delay: 0.2s;
+    transform: rotate(-41deg) translate(10px,3px);
+    width: 13px;
 }
+
+/* Toggle Button Animation End */
+
 /* End Navbar  */
 
 /* Start Banner  */
@@ -212,3 +241,173 @@ header{
 }
 
 /* End customer section  */
+
+/* Start Pricing Section  */
+.cardones, .cardtwos, .cardthrees{
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)),url(../assets/img/etc/camerabg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    box-shadow: 7px 18px 50px #555;
+}
+
+.carditems{
+    width: 55%;
+    border-bottom: 1px solid #eee;
+    margin: auto;
+}
+
+.cardbuttons{
+    width: 130px;
+    background-color: #de4121;
+    border-radius: 25px;
+    box-shadow: 5px 8px 20px #000;
+}
+
+.cardbuttons:hover{
+    background-color: #eb5a3d;
+    transform: translateY(-2px);
+}
+
+.cardones.movefromlefts{
+    animation-name: movefromlefts;
+    animation-duration: 2s;
+}
+
+.cardtwos.movefrombottoms{
+    animation-name: movefrombottoms;
+    animation-duration: 2s;
+}
+
+.cardthrees.movefromrights{
+    animation-name: movefromrights;
+    animation-duration: 2s;
+}
+
+@keyframes movefromlefts{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes movefrombottoms{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes movefromrights{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/* End Pricing Section  */
+
+/* Start Contact Section  */
+
+.contacts{
+    background: linear-gradient(
+        105deg,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,0.9) 50%,
+        transparent 50%
+
+    ), url('../assets/img/etc/lady.jpg');
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.inputs{
+    background: transparent;
+    border-color: transparent;
+    border-bottom: 2px solid #ccc;
+    color: #eee;
+
+    /* bcz of rounded = bootstrap style  */
+    border-radius: 0;
+}
+
+.inputs:focus{
+    background: transparent;
+    border-color: transparent;
+    border-bottom: 2px solid #eb5a3d;
+    color: #eee;
+
+    /* bcz of form-control = bootstrap style */
+    box-shadow: none;
+
+}
+
+.submitbuttons{
+    background-color: #de4121;
+    color: #eee;
+
+    transition: all 0.3s;
+}
+
+.submitbuttons:hover{
+    background-color: #eb5a3d;
+    transform: translateY(-3px);
+}
+
+.labels{
+    display: block;
+    font-size: 15px;
+    color: #999;
+    margin-left: 4px;
+    margin-top: -60px;
+
+    transition: all 0.3s;
+}
+
+.inputs:placeholder-shown + .labels{
+    visibility: hidden;
+    /* opacity: 0; */
+                     /* left - , top -  */
+    transform: translate(20px,20px);
+}
+
+
+/* End Contace Section  */
+
+/* Start Footer Section  */
+.footerlinks{
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+
+    transition: all 0.3s;
+}
+
+.footerlinks:hover{
+    color: #15a0eb;
+}
+
+/* End Footer Section  */
+
+
+
+
+
